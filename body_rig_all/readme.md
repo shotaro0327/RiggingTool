@@ -62,3 +62,4 @@
 ├── create_all_ctrl.py # 腕・脚のコントローラ生成（FK/IK対応）
 ├── combine_ctrl.py # 全体統合とスイッチ制御
 └── README_JP.md # 日本語版の説明書（このファイル）
+##
