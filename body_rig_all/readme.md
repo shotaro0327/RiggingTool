@@ -56,9 +56,9 @@
 ## 🧩 ファイル構成
 
 /body_rig_all/
-├ ctrl_gide #　対象のキャラクターに合わせて骨を生成するガイドを配置
-├ create_bend.py # ベンドジョイントとリボンシステムの作成
-├ body_ctrl.py # 背骨・首のコントローラ生成
-├ create_all_ctrl.py # 腕・脚のコントローラ生成（FK/IK対応）
-├ combine_ctrl.py # 全体統合とスイッチ制御
-└ README_JP.md # 日本語版の説明書（このファイル）
+|ctrl_gide #　対象のキャラクターに合わせて骨を生成するガイドを配置
+| create_bend.py # ベンドジョイントとリボンシステムの作成
+| body_ctrl.py # 背骨・首のコントローラ生成
+| create_all_ctrl.py # 腕・脚のコントローラ生成（FK/IK対応）
+| combine_ctrl.py # 全体統合とスイッチ制御
+| README_JP.md # 日本語版の説明書（このファイル）
