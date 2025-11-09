@@ -175,7 +175,39 @@ def head_connection():
     head_first = 'head_ctrlSpace'
     head_second = 'head_ctrl'
     head_target = 'Chest:CS:Root:World'
-    create_switch(head_p_n, head_first, head_second, head_target, 1, 0)  
+    create_switch(head_p_n, head_first, head_second, head_target, 1, 0)
+    
+def IKFK_condition(num):
+    #IKFKの切り替え時のコントローラの表示非表示
+    part = num #L is 76. R is 82
+
+    a = 'IKFK_arm_' + chr(part)+ '_ctrl'   
+    cd = cmds.shadingNode('condition', name='IKFK_arm_' + chr(part) + '_cd', asUtility=True)
+    cmds.connectAttr(a + '.blend', cd + '.firstTerm')
+    cmds.setAttr(cd + '.secondTerm', 0.5)
+    cmds.setAttr(cd + '.operation', 4)
+    cmds.setAttr(cd + '.colorIfTrueR', 1)
+    cmds.setAttr(cd + '.colorIfFalseR', 0)
+    cmds.connectAttr(cd + '.outColor.outColorR', a + '.arm_' + chr(part)+ '_IKFK')
+
+    #FKコントローラの非表示
+    #foot
+    ikfk_foot_A = 'IKFK_leg_' + chr(part)+ '_ctrl' + '.leg_' + chr(part) + '_IKFK'
+    foot_v = chr(part) + '_FK_leg_ctrl_grp' + '.visibility'
+    cmds.setAttr(ikfk_foot_A, 1)
+    cmds.setDrivenKeyframe(foot_v, cd = ikfk_foot_A)
+    cmds.setAttr(ikfk_foot_A, 0)
+    cmds.setAttr(foot_v, 0)
+    cmds.setDrivenKeyframe(foot_v, cd = ikfk_foot_A)
+    
+    b = 'IKFK_leg_' + chr(part)+ '_ctrl'   
+    cd = cmds.shadingNode('condition', name='IKFK_leg_' + chr(part) + '_cd', asUtility=True)
+    cmds.connectAttr(b + '.blend', cd + '.firstTerm')
+    cmds.setAttr(cd + '.secondTerm', 0.5)
+    cmds.setAttr(cd + '.operation', 4)
+    cmds.setAttr(cd + '.colorIfTrueR', 1)
+    cmds.setAttr(cd + '.colorIfFalseR', 0)
+    cmds.connectAttr(cd + '.outColor.outColorR', b + '.leg_' + chr(part)+ '_IKFK')
         
 def main():
     arm_connection(76)
@@ -185,3 +217,5 @@ def main():
     leg_connection(82)
     neck_connection()
     head_connection()
+    IKFK_condition(76)
+    IKFK_condition(82)
