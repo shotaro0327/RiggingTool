@@ -52,13 +52,13 @@ PySide2 GUIにより、Setup/Cleanupも1クリック。
 
 ### ⑥ 階層整理・バインドジョイントセットアップ 📂
 - AutoRigHierarchySetup.py
-最終的にバインド用ジョイント階層を整理し、  
+- 最終的にバインド用ジョイント階層を整理し、  
 `segmentScaleCompensate = 0` へ統一。  
 安定したスケール挙動を実現。
 
 ### ⑦ ストレッチIK 🏋️
 - create_stretch_all.py
-腕の IK チェーンに距離ベースの Stretch を付与します。`distanceDimension` と カーブの `arcLength` を比較し、
+- 腕の IK チェーンに距離ベースの Stretch を付与します。`distanceDimension` と カーブの `arcLength` を比較し、
 `condition(Greater Than)` の出力で 上腕/肘/手首 の `scaleX` を駆動します。  
 実行すると、補助ノードは `stretch_curve_gp`（controls_grp配下）と `stretch_distance_gp`（rig_grp配下）に自動整理されます
 
