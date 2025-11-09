@@ -15,8 +15,8 @@ _HUMAN_IK_SOURCE_MENU = "hikSourceList"
 _HUMAN_IK_SOURCE_MENU_OPTION = _HUMAN_IK_SOURCE_MENU + "|OptionMenu"
 
 # アニメーションデータフォルダのパス
-animation_folder_path = R"\\192.168.11.207\vfx\sozai\model\cde_peopleanimation\002_A-set\104_Sota\Animation(mixamo)"
-studio_path = R"\\192.168.11.207\cde\assets\Anim"
+animation_folder_path = R"\Animation(mixamo)"
+studio_path = R"\assets\Anim"
 
 #hik_character_name = "male"
 hik_source_name = "Character1"

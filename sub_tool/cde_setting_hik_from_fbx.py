@@ -150,9 +150,9 @@ def setting_hik_from_fbx(folder_path, root_joint, template_path, save_folder):
                 
 
 
-fbx_folder = R"\\192.168.11.207\vfx\sozai\model\cde_peopleanimation\197_Uta\0_Animation(mixamo)\test"
-maflie_save_folder = R"\\192.168.11.207\vfx\sozai\model\cde_peopleanimation\197_Uta\0_Animation(mixamo)\test"
-hik_template_path = R"C:\Users\s_yamana\AppData\Roaming\Autodesk\HIKCharacterizationTool6\template\048_ken_temp.xml"
+fbx_folder = R"fbxデータのある場所"
+maflie_save_folder = R"maデータを保存する場所"
+hik_template_path = R"humanIKのリグとモデルのジョイントの組み合わせデータのxmlの場所\048_ken_temp.xml"
 root_joint = "mixamorig:Hips"
 
 print ("#####__START__#####")
